@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.springboot.mycgv.dto.BoardDto;
+import com.springboot.mycgv.dto.PageDto;
 import com.springboot.mycgv.mapper.BoardMapper;
 
 @Service
@@ -14,26 +15,31 @@ public class BoardService {
 	@Autowired
 	private BoardMapper boardDao;
 	
-	public List<BoardDto> getList(){
-		return boardDao.getList();
-	}
-	
-	public int getInsert(BoardDto dto) {
-		return boardDao.getInsert(dto);
+	public List<BoardDto> getList(PageDto pageDto){
+		return boardDao.getList(pageDto);
 	}
 	
 	public BoardDto getContent(String bid) {
 		return boardDao.getContent(bid);
 	}
-	
-	public int getUpdate(BoardDto dto) {
-		return boardDao.getUpdate(dto);
-	}
 
-	public int getDelete(BoardDto dto) {
-		return boardDao.getDelete(dto);
+	public int getWrite(BoardDto boardDto) {
+		return boardDao.getWrite(boardDto);
 	}
 	
-
-
+	public int getUpdate(BoardDto boardDto) {
+		return boardDao.getUpdate(boardDto);
+	}
+	
+	public int getDelete(BoardDto boardDto) {
+		return boardDao.getDelete(boardDto);
+	}
+	
+	public int getUpdateHits(String bid) {
+		return boardDao.getUpdateHits(bid);
+	}
+	
 }
+
+
+

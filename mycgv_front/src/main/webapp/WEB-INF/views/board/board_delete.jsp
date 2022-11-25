@@ -18,8 +18,9 @@
 	<!---------------------------------------------->
 	<div class="content">
 		<h1>게시판-삭제하기</h1>
-		<form name="boardDeleteForm" action="board_delete_check" method="post">
+		<form name="boardDeleteForm" action="/board_delete" method="post">
 			<input type="hidden" name="bid" value="${bid}">
+			<input type="hidden" name="bsfile" value="${bsfile}">
 			<ul>
 				<li>
 					<img src="http://localhost:9000/images/delete.jpg"> <!-- 휴지통 이미지 -->					
@@ -29,8 +30,8 @@
 				</li>
 				<li>
 					<button type="submit" class="btn_style">삭제완료</button>					
-					<a href="board_content/${bid}"><button type="button" class="btn_style">이전페이지</button></a>
-					<a href="board_list"><button type="button" class="btn_style">리스트</button></a>
+					<a href="/board_content/${bid }/${rpage}"><button type="button" class="btn_style">이전페이지</button></a>
+					<a href="/board_list/${rpage}"><button type="button" class="btn_style">리스트</button></a>
 				</li>
 			</ul>
 		</form>

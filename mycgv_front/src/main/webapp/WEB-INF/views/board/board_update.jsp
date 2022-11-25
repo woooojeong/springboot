@@ -43,7 +43,7 @@
 	<!---------------------------------------------->
 	<div class="content">
 		<h1>게시판-수정하기</h1>
-		<form name="boardUpdateForm" action="board_update_check" method="post" enctype="multipart/form-data">
+		<form name="boardUpdateForm" action="/board_update" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="bid"  value="${vo.bid}" >
 			<input type="hidden" name="bfile"  value="${vo.bfile}" >
 			<input type="hidden" name="bsfile"  value="${vo.bsfile}" >
@@ -73,8 +73,8 @@
 				<li>
 					<button type="button" class="btn_style" id="btnBoardUpdate">수정완료</button>
 					<button type="reset" class="btn_style">다시쓰기</button>
-					<a href="board_content/${vo.bid}"><button type="button" class="btn_style">이전페이지</button></a>
-					<a href="board_list"><button type="button" class="btn_style">리스트</button></a>
+					<a href="/board_content/${vo.bid }/${rpage}"><button type="button" class="btn_style">이전페이지</button></a>
+					<a href="/board_list/${rpage}"><button type="button" class="btn_style">리스트</button></a>
 				</li>
 			</ul>
 		</form>

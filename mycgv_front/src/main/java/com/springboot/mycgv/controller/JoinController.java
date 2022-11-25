@@ -2,63 +2,63 @@ package com.springboot.mycgv.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.springboot.mycgv.dto.MemberDto;
 import com.springboot.mycgv.service.MemberService;
+//import com.springboot.mycgv.service.MemberServiceImpl;
 
 @Controller
 public class JoinController {
+   
+   @Autowired
+   private MemberService memberService;
+   
+   //id_check : 아이디 중복 체크  -  Ajax 호출
+ /*  @ResponseBody
+   @GetMapping("/id_check/{id}")
+   public String id_check(@PathVariable String id) {
+      int result = memberService.getIdCheck(id);
+      
+      return String.valueOf(result);
+   }
+   
+   //joinCheck
+   @RequestMapping(value = "/joinCheck", method = RequestMethod.POST)
+   public ModelAndView joinCheck(MemberDto dto) {
+      ModelAndView mv = new ModelAndView();
+
+      int result = memberService.getJoinResult(dto);
+      
+      if(result == 1) {
+         mv.addObject("join_result", "ok");
+         mv.setViewName("/login/login");
+      }else {
+         mv.setViewName("/error_page");
+      }
+      
+      return mv;
+   }
+   */
 	
-	@Autowired
-	private MemberService memberService;
-	
-	/**
-	 * id_check : 아이디 중복체크 처리 - Ajax 호출
-	 */
-//	@ResponseBody
-//	@RequestMapping(value="/id_check", method=RequestMethod.GET)
-//	public String idCheck(String id) {
-//		int result = memberService.getIdCheck(id);
-//		return String.valueOf(result);
-//	}
-	
-	
-	/**
-	 * joinCheck : 회원가입 처리
-	 */
-//	@RequestMapping(value="/joinCheck", method=RequestMethod.POST)
-//	public ModelAndView joinCheck(CgvMemberVO vo) {
-//		ModelAndView mv = new ModelAndView();
-//		
-//		int result = memberService.getJoinResult(vo);
-//		
-//		if(result == 1){
-//			mv.addObject("join_result","ok");
-//			mv.setViewName("/login/login");
-//		}else{
-//			mv.setViewName("error_page");
-//		}
-//		
-//		return mv;
-//	}
-	
-	
-	
-	/**
-	 * join : 회원가입 폼
-	 */
-	@GetMapping("/join")
-	public String join() {
-		return "/join/join";
-	}
-	
-	@PostMapping("/join") //회원가입 등록처리
-	public String joinPost(MemberDto memberDto) {
-		
-		memberService.getJoin(memberDto);
-		return "redirect:/";
-	}
-	
+   //join : 회원가입 폼
+   @GetMapping("/join")
+   public String join() {
+      return "/join/join";
+   }
+   
+   @PostMapping("/join")
+   public String join_post(MemberDto memberdto, Model model) {
+	   
+	   int result = memberService.join(memberdto);
+	   
+	   if(result == 1) model.addAttribute("join_result", "ok");
+	   else model.addAttribute("join_result", "fail");
+	   
+	   return "/login/login";
+   }
+   
+   
 }

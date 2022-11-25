@@ -1,5 +1,5 @@
 
-	* { font-family:³ª´®¹Ù¸¥°íµñ; }	
+	* { font-family:ï¿½ï¿½ï¿½ï¿½ï¿½Ù¸ï¿½ï¿½ï¿½ï¿½; }	
 	body { margin:0; padding:0; }
 	.header_contents1 , .header_contents2 nav{
 		width:980px; margin:0 auto;
@@ -72,7 +72,7 @@
 	dl.dropdown-content dt + dd{margin-top:8px;}
 	dl.dropdown-content dd h3{font-weight:400; font-size:14px; color:#666; line-height:2.143em;}
 	
-	/* CSSÀÇ hover¸¦ ÀÌ¿ëÇÑ ¸¶¿ì½º ¿À¹ö ±â´É */
+	/* CSSï¿½ï¿½ hoverï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ì½º ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ */
 	.header_contents2 .dropdown:hover .dropdown-content {
 		display : block; 
 	}  
@@ -139,13 +139,9 @@
  	/********************************************************
 	// content
 	********************************************************/
-  	div.content { width:980px; margin:0 auto; /* border:2px solid red; */ }
- 	.carousel {margin-top:0px; width:100%; 
- 				background-color:powderblue;
- 				height:200px; text-align:center;			
- 	}
+  	div.content, .carousel { width:980px; margin:0 auto; /* border:2px solid red; */ }
  	
- 	/******* ¹«ºñÂ÷Æ® *****************/
+ 	/******* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® *****************/
  	div.content section:first-child {
  		/* border:2px solid blue; */
  		padding-top:20px;
@@ -206,7 +202,7 @@
  		padding:16px;
  	}
  	*/
- 	/***** ¿µÈ­ °ü¶÷±Ç ***********/
+ 	/***** ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ***********/
  	div.content section:last-child {
  		display:flex;
  		justify-content:space-between;
@@ -255,7 +251,7 @@
  	}
  	
  	/***********************************
- 		·Î±×ÀÎÆû
+ 		ï¿½Î±ï¿½ï¿½ï¿½ï¿½ï¿½
  	***********************************/
  	div.content > h1 {
  		/*border:1px solid blue;*/
@@ -313,7 +309,7 @@
 	}
  	
  	/***********************************
- 		È¸¿ø°¡ÀÔ
+ 		È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  	***********************************/
  	form[name='joinForm'] { 
 /*  		border:1px solid red;  */
@@ -406,7 +402,7 @@
 	form[name='joinForm']  select { font-size:12px; }
 	
 	/***********************************
- 		¸¶ÀÌCGV
+ 		ï¿½ï¿½ï¿½ï¿½CGV
  	***********************************/
  	div.content section.mycgv, div.content section.adminMain {
  		/* border:1px solid red;  */ 
@@ -438,7 +434,7 @@
  	
 
 	/***********************************
- 		°Ô½ÃÆÇ
+ 		ï¿½Ô½ï¿½ï¿½ï¿½
  	***********************************/
  	table.board, form[name='boardWriteForm'], 
  	table.boardContent, form[name='boardUpdateForm'],
@@ -551,12 +547,12 @@
  	form[name='boardDeleteForm'] li:nth-child(2) div {
  		text-align:center;
  		font-size:20px; 
- 		font-family:'ÇÔÃÊ·Õ¹ÙÅÁ';
+ 		font-family:'ï¿½ï¿½ï¿½Ê·Õ¹ï¿½ï¿½ï¿½';
  		font-weight:bold;
  		padding:10px 0;
  	}
  	
-	/******** ¹öÆ° °øÅë ½ºÅ¸ÀÏ  ******************/
+	/******** ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½  ******************/
 	.btn_style {
 		font-size:12px;
 		width:100px;

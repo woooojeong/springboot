@@ -7,10 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>CGV</title>
-<link rel="stylesheet"  href="http://localhost:9000/mycgv/resources/css/mycgv.css">
-<link rel="stylesheet"  href="http://localhost:9000/mycgv/resources/css/am-pagination.css">
-<script src="http://localhost:9000/mycgv/resources/js/jquery-3.6.0.min.js"></script>
-<script src="http://localhost:9000/mycgv/resources/js/am-pagination.js"></script>
+<link rel="stylesheet"  href="http://localhost:9000/css/mycgv.css">
+<link rel="stylesheet"  href="http://localhost:9000/css/am-pagination.css">
+<script src="http://localhost:9000/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/js/am-pagination.js"></script>
 <script>
 	$(document).ready(function(){
 		
@@ -34,7 +34,7 @@
 		//페이징 번호 클릭 시 이벤트 처리
 		jQuery('#ampaginationsm').on('am.pagination.change',function(e){		
 			   jQuery('.showlabelsm').text('The selected page no: '+e.page);
-	           $(location).attr('href', "http://localhost:9000/mycgv/admin_member_list?rpage="+e.page);         
+	           $(location).attr('href', "http://localhost:9000/admin_member_list/"+e.page);         
 	    });
 		
  	});
@@ -42,7 +42,7 @@
 </head>
 <body>
 	<!-- Header Include -->
-	<iframe src="http://localhost:9000/mycgv/header" width="100%" height="160px" scrolling="no" frameborder=0 ></iframe>
+	<iframe src="http://localhost:9000/header" width="100%" height="160px" scrolling="no" frameborder=0 ></iframe>
 	
 	
 	<!---------------------------------------------->
@@ -62,7 +62,7 @@
 			<c:forEach var="vo"  items="${list}">
 			<tr>
 				<td>${vo.rno }</td>
-				<td><a href="admin_member_content?id=${vo.id }">${vo.id }</a></td>
+				<td><a href="admin_member_content/${vo.id}/${page.reqPage}">${vo.id}</a></td>
 				<td>${vo.name }</td>
 				<td>${vo.pnumber }</td>
 				<td>${vo.mdate }</td>
@@ -76,7 +76,7 @@
 	</div>
 	
 	<!-- footer Include -->
-	<iframe src="http://localhost:9000/mycgv/footer" width="100%" height="530px" scrolling="no" frameborder=0></iframe>
+	<iframe src="http://localhost:9000/footer" width="100%" height="530px" scrolling="no" frameborder=0></iframe>
 	
 </body>
 </html>

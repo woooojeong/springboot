@@ -35,16 +35,16 @@
 				<td colspan="3">${vo.bcontent }<br><br>
 				<c:if test="${vo.bsfile != null}">
 					<!--  파일업로드 출력 -->
-					<img src="http://localhost:9000/resources/upload/${vo.bsfile}"
-						width="100" height="70">
+					<img src="http://localhost:9000/upload/${vo.bsfile}" width="50%">
 				</c:if>
-				<br><br><br></td>
+				<br><br><br>
+				</td>
 			</tr>
 			<tr>
 				<td colspan="4">
-					<a href="board_update/${vo.bid }"><button type="button" class="btn_style">수정하기</button></a>
-					<a href="board_delete/${vo.bid }"><button type="button" class="btn_style">삭제하기</button></a>
-					<a href="board_list">
+					<a href="/board_update/${vo.bid }/${rpage}"><button type="button" class="btn_style">수정하기</button></a>
+					<a href="/board_delete/${vo.bid }/${rpage}"><button type="button" class="btn_style">삭제하기</button></a>
+					<a href="/board_list/${rpage}">
 						<button type="button" class="btn_style">리스트</button>
 					</a>
 				</td>

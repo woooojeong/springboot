@@ -19,7 +19,7 @@
 	<!---------------------------------------------->
 	<div class="content">
 		<h1>게시판-글쓰기</h1>
-		<form name="boardWriteForm" action="board_write" method="post" enctype="multipart/form-data">
+		<form name="boardWriteForm" action="/board_write" method="post" enctype="multipart/form-data">
 			<ul>
 				<li>
 					<label>제목</label>
@@ -36,7 +36,7 @@
 				<li>
 					<button type="button" class="btn_style" id="btnBoardWrite">등록완료</button>
 					<button type="reset" class="btn_style">다시쓰기</button>
-					<a href="board_list">
+					<a href="/board_list">
 						<button type="button" class="btn_style">리스트</button>
 					</a>
 				</li>

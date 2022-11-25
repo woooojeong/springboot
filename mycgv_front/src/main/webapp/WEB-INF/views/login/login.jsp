@@ -11,16 +11,6 @@
 <script src="http://localhost:9000/js/mycgv_jquery.js"></script>
 <script>
 	let join_result = '${join_result}';
-	let login_result = '${login_result}';
-	let auth_result = '${auth}';
-	
-	if(auth_result == "fail"){
-		alert("접근 권한이 없습니다. 로그인을 진행해 주세요.");
-	}
-	
-	if(login_result == 'fail'){
-		alert("아이디 또는 패스워드가 다릅니다. 다시 로그인해주세요");	
-	}
 	
 	if(join_result == 'ok'){
 		alert("회원가입에 성공하셨습니다.");

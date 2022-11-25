@@ -17,10 +17,10 @@
 		//페이징 리스트 출력
 		var pager = jQuery('#ampaginationsm').pagination({
 		
-		    maxSize: 7,	    		// max page size
-		    totals: '${dbCount}',	// total rows	
-		    page: '${rpage}',		// initial page		
-		    pageSize: '${pageSize}',	// max number items per page
+		    maxSize: 5,	    		// max page size
+		    totals: ${page.dbCount},	// total rows	
+		    page: ${page.reqPage},		// initial page		
+		    pageSize: ${page.pageSize},	// max number items per page
 		
 		    // custom labels		
 		    lastText: '&raquo;&raquo;', 		
@@ -34,7 +34,7 @@
 		//페이징 번호 클릭 시 이벤트 처리
 		jQuery('#ampaginationsm').on('am.pagination.change',function(e){		
 			   jQuery('.showlabelsm').text('The selected page no: '+e.page);
-	           $(location).attr('href', "http://localhost:9000/board_list?rpage="+e.page);         
+	           $(location).attr('href', "http://localhost:9000/board_list/"+e.page);         
 	    });
 		
  	});
@@ -53,7 +53,7 @@
 		<table class="board">
 			<tr>
 				<td colspan="4">
-					<a href="board_write">
+					<a href="/board_write">
 					<button type="button" class="btn_style">글쓰기</button>
 					</a>
 				</td>
@@ -68,9 +68,9 @@
 			<c:forEach var="vo" items="${list}">
 			<tr>
 				<td>${vo.rno}</td>
-				<td><a href="board_content/${vo.bid}">${vo.btitle}</a></td>
-				<td>${vo.bdate}</td>
-				<td>${vo.bhits}</td>
+				<td><a href="/board_content/${vo.bid}/${page.reqPage}">${vo.btitle}</a></td>
+				<td>${vo.bdate }</td>
+				<td>${vo.bhits }</td>
 			</tr>
 			</c:forEach>
 			

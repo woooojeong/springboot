@@ -21,12 +21,12 @@
 					<img src="http://localhost:9000/images/logoRed.png" width="150" height="70"></a>
 				<span>CULTURFLEX</span>				
 			</div>	
-			<c:if test="${sessionScope.svo != null}">
-				<span>[${sessionScope.svo.name}]님 반갑습니다.</span>
+			<c:if test="${sessionScope.sid != null}">
+				<span>[${sessionScope.sid}]님 반갑습니다.</span>
 			</c:if>
 			
 			<c:choose>	
-			<c:when test="${sessionScope.svo == null}">	
+			<c:when test="${sessionScope.sid == null}">	
 			<div>
 				<img src="http://localhost:9000/images/hcard.png">
 				<a href="http://localhost:9000/login" target="_parent" >
@@ -45,7 +45,7 @@
 					<img src="http://localhost:9000/images/loginCustomer.png">
 					<span>게시판</span>
 				</a>
-				<a href="http://localhost:9000/notice_list" target="_parent" >
+				<a href="http://localhost:9000/notice_list " target="_parent" >
 					<img src="http://localhost:9000/images/loginCustomer.png">
 					<span>공지사항</span>
 				</a>
@@ -55,7 +55,7 @@
 			<c:otherwise> 
 			<div>
 				<img src="http://localhost:9000/images/hcard.png">
-				<a href="http://localhost:9000/logout" target="_parent" >
+				<a href="http://localhost:9000/logout " target="_parent" >
 					<img src="http://localhost:9000/images/loginPassword.png">
 					<span>로그아웃</span>
 				</a>
@@ -63,7 +63,7 @@
 					<img src="http://localhost:9000/images/loginJoin.png">
 					<span>회원가입</span>
 				</a>
-				<a href="http://localhost:9000/mycgv" target="_parent">
+				<a href="http://localhost:9000/mycgv " target="_parent">
 					<img src="http://localhost:9000/images/loginMember.png">
 					<span>MY CGV</span>
 				</a>
@@ -71,13 +71,13 @@
 					<img src="http://localhost:9000/images/loginCustomer.png">
 					<span>게시판</span>
 				</a>
-				<a href="http://localhost:9000/notice_list" target="_parent" >
+				<a href="http://localhost:9000/notice_list " target="_parent" >
 					<img src="http://localhost:9000/images/loginCustomer.png">
 					<span>공지사항</span>
 				</a>
 				<!-- 관리자 계정인 경우에만 admin 메뉴를 open -->
-				<c:if test="${sessionScope.svo.id == 'admin' }">
-				<a href="http://localhost:9000/admin" target="_parent" >
+				<c:if test="${sessionScope.sid == 'admin' }">
+				<a href="http://localhost:9000/admin " target="_parent" >
 					<img src="http://localhost:9000/images/loginCustomer.png">
 					<span>Admin</span>
 				</a>

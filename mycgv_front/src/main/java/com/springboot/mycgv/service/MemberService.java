@@ -12,12 +12,15 @@ public class MemberService {
 	@Autowired
 	private MemberMapper memberDao;
 	
-	public int getJoin(MemberDto memberDto) {
-		return memberDao.getJoin(memberDto);
+	public int join(MemberDto memberDto) {
+		return memberDao.join(memberDto);
 	}
-
-	public int getLogin(MemberDto memberDto) {
-		return memberDao.getLogin(memberDto);
+	
+	public int login(MemberDto memberDto) {
+		return memberDao.login(memberDto);
 	}
-
+	
 }
+
+
+

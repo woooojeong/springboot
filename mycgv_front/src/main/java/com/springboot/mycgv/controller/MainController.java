@@ -5,15 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MainController {
-	
-	/**
-	 * root
-	 */
-	@GetMapping("/")
-	public String root() {
-		return "redirect:/index";
-	}
-	
+
 	/**
 	 * footer
 	 */
@@ -38,5 +30,12 @@ public class MainController {
 	public String index() {
 		return "/index";
 	}
+	
+	
+	@GetMapping("/")
+	public String root() {
+		return "redirect:/index";
+	}
+	
 	
 }
