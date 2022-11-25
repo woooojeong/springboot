@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.springboot.mycgv.mapper.MemberMapper"> 
+
+	<insert id="getJoin" parameterType="com.springboot.mycgv.dto.MemberDto">
+		insert into cgv_member values (#{id},#{pass},#{id},#{gender},#{email},#{zonecode},
+										#{addr1},#{addr2},#{hp},#{pnumber},#{hobbylist},#{intro},sysdate)
+	</insert>
+
+	<select id="getLogin" resultType="int" parameterType="com.springboot.mycgv.dto.MemberDto">
+		select count(*) from cgv_member where id=#{id} and pass=#{pass}
+	</select>	
+	
+</mapper>
+	
