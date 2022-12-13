@@ -15,6 +15,20 @@
 			select count(*) from cgv_member where id=#{id} and pass=#{pass}
 	</select>
 
+	<select id="getMemberList" parameterType="com.springboot.mycgv.dto.MemberDto" resultType="com.springboot.mycgv.dto.MemberDto">
+		select rno, id, name, pnumber, mdate from(
+			select rownum rno, id, name, pnumber, mdate from(
+			select id, name, pnumber, mdate from cgv_member order by mdate desc))
+			where rno between #{startCount} and #{endCount}
+	</select>
+	<select id="getMemberContent" parameterType="java.lang.String" resultType="com.springboot.mycgv.dto.MemberDto">
+		select id, name, addr1, addr2, pnumber, hobbylist, intro, mdate from cgv_member where id=#{id}
+	</select>
+
+	<select id="idCheck" parameterType="java.lang.String" resultType="int">
+		select count(*) from cgv_member where id=#{id}
+	</select>
+	
 </mapper>
 	
 	

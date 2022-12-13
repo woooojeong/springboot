@@ -18,7 +18,12 @@
 			<when test = 'tableName.equals("movie")'>
 				cgv_movie
 			</when>
-		
+			<when test= 'tableName.equals("movie_file")'>
+				cgv_movie_file
+			</when>
+			<when test= 'tableName.equals("member")'>
+				cgv_member
+			</when>
 		</choose>
 	
 	</select>
